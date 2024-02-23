@@ -41,7 +41,7 @@ type ExecutionPayload struct {
 	BaseFeePerGas *uint256.Int            `ssz-size:"32"`
 	BlockHash     phase0.Hash32           `ssz-size:"32"`
 	Transactions  []bellatrix.Transaction `dynssz-max:"MAX_TRANSACTIONS_PER_PAYLOAD,MAX_BYTES_PER_TRANSACTION" ssz-max:"1048576,1073741824" ssz-size:"?,?"`
-	Withdrawals   []*capella.Withdrawal   `dynssz-max:"MAX_WITHDRAWALS_PER_PAYLOAD"                            ssz-max:"16"`
+	Withdrawals   []*capella.Withdrawal   `dynssz-max:"MAX_WITHDRAWALS_PER_PAYLOAD"                            ssz-max:"8"`
 	BlobGasUsed   uint64
 	ExcessBlobGas uint64
 }
